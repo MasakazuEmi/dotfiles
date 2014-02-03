@@ -36,9 +36,6 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 
-set term=builtin_linux
-set ttytype=builtin_linux
-
 "不可視文字の表示
 set list
 set listchars=tab:>-,trail:_,extends:>,precedes:<
