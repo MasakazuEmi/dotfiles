@@ -9,6 +9,9 @@ set textwidth=0
 set backupdir=~/tmp
 set directory=~/tmp
 
+"leader
+map ¥ <Leader>
+
 "NeoBundle用設定
 filetype off
 if has('vim_starting')
