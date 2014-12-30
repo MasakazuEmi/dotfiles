@@ -13,7 +13,7 @@ set backupdir=~/tmp
 set directory=~/tmp
 
 "leader
-map \ <Leader>
+"map ¥ <Leader>
 
 "NeoBundle用設定
 filetype off
