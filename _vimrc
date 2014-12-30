@@ -13,7 +13,7 @@ set backupdir=~/tmp
 set directory=~/tmp
 
 "leader
-map ¥ <Leader>
+map \ <Leader>
 
 "NeoBundle用設定
 filetype off
@@ -63,7 +63,11 @@ set listchars=tab:>-,trail:_,extends:>,precedes:<
 
 "カラースキーム
 set t_Co=256
-colorscheme jellybeans
+if (has('win32') || has('win64')) && !has('gui_running')
+	colorscheme wombat
+else
+	colorscheme jellybeans
+endif
 
 "全角スペースハイライト
 augroup highlightIdegraphicSpace

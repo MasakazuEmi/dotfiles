@@ -4,6 +4,11 @@ set columns=120
 
 colorscheme jellybeans
 
+if has('win32') || has('win64')
+	set guifont=MS_Gothic:h10
+endif
+
+
 
 
 
