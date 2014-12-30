@@ -5,6 +5,9 @@ set shiftwidth=4
 set noexpandtab
 set textwidth=0
 
+"音/フラッシュオフ
+set visualbell t_vb=
+
 "バックアップファイル/スワップファイル
 set backupdir=~/tmp
 set directory=~/tmp
@@ -15,9 +18,31 @@ map ¥ <Leader>
 "NeoBundle用設定
 filetype off
 if has('vim_starting')
-set runtimepath+=~/.vim/bundle/neobundle.vim
-call neobundle#rc(expand('~/.vim/bundle/'))
+	if &compatible
+		set nocompatible
+	endif
+	set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build': {
+	\ 'windows': 'tools\\update-dll-mingw',
+	\ 'cygwin': 'make -f make_cygwin.mak',
+	\ 'mac': 'make -f make_mac.mak',
+	\ 'linux': 'make',
+	\ 'unix': 'gmake',
+\ },
+\}
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+
 " Colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'croaker/mustang-vim'
@@ -30,14 +55,7 @@ NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'therubymug/vim-pyte'
 NeoBundle 'tomasr/molokai'
 
-"
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
+call neobundle#end()
 
 "不可視文字の表示
 set list
@@ -61,13 +79,20 @@ syntax on
 "***
 "***quickun
 "***
-let g:quickrun_config = {
-\'objc': {
-\'command': 'cc',
-\'exec': ['%c %s -o %s:p:r -framework Foundation', '%s:p:r %a', 'rm -f %s:p:r'],
-\'tempfile': '{tempname()}.m',
-\}
-\}
+let g:quickrun_config = {}
+if has('mac')
+	let g:quickrun_config['objc'] = {
+		\'command': 'cc',
+		\'exec': ['%c %s -o %s:p:r -framework Foundation', '%s:p:r %a', 'rm -f %s:p:r'],
+		\'tempfile': '{tempname()}.m'
+	\}
+	let g:quickrun_config['cs'] = {
+		\'command': 'mcs',
+		\'exec': ['%c %o %s:p > /dev/null', 'mono %s:p:r.exe', 'rm %s:p:r.exe'],
+		\'cmdopt': '-warn:4',
+		\'quickfix/errorformat': '%f\\(%l\\,%c\\):\ error\ CS%n:\ %m',
+	\}
+endif
 
 "***
 "***Shougo/neocomplcache
