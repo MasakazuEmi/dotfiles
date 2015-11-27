@@ -13,7 +13,7 @@ set backupdir=~/tmp
 set directory=~/tmp
 
 "leader
-"map ¥ <Leader>
+map ¥ <Leader>
 
 "NeoBundle用設定
 filetype off
@@ -95,6 +95,10 @@ if has('mac')
 		\'exec': ['%c %o %s:p > /dev/null', 'mono %s:p:r.exe', 'rm %s:p:r.exe'],
 		\'cmdopt': '-warn:4',
 		\'quickfix/errorformat': '%f\\(%l\\,%c\\):\ error\ CS%n:\ %m',
+	\}
+	let g:quickrun_config['cpp'] = {
+		\'command': 'g++',
+		\'cmdopt': '-std=c++11'
 	\}
 endif
 
