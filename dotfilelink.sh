@@ -5,14 +5,14 @@ git submodule init
 git submodule update
 cd ~/
 
-rm ~/.vimrc
+rm -f ~/.vimrc
 ln -s ~/dotfiles/_vimrc ~/.vimrc
-rm ~/.gvimrc
+rm -f ~/.gvimrc
 ln -s ~/dotfiles/_gvimrc ~/.gvimrc
-rm ~/.vim
+rm -f ~/.vim
 ln -s ~/dotfiles/_vim ~/.vim
 
-rm ~/.gitconfig
+rm -f ~/.gitconfig
 ln -s ~/dotfiles/_gitconfig .gitconfig
 
 mkdir -p tmp 2>/dev/null
