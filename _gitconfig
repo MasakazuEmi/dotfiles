@@ -1,2 +1,5 @@
 [core]
 	editor = vim -c \"set fenc=utf-8\"
+[user]
+	name = Masakazu Emi
+	email = masakazu.emi@gmail.com
