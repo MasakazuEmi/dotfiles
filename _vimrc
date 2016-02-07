@@ -80,6 +80,8 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
+NeoBundleCheck
+
 "***
 "***quickun
 "***
