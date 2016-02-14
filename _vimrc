@@ -41,6 +41,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'ujihisa/unite-colorscheme'
 
 " Colorscheme
