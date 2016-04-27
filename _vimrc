@@ -43,6 +43,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'scrooloose/nerdtree'
 
 " Colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
