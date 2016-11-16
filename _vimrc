@@ -5,6 +5,16 @@ set shiftwidth=4
 set noexpandtab
 set textwidth=0
 
+"ファイルタイプ別設定
+augroup fileTypeIndent
+	autocmd!
+	" html/javascript
+	autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 shiftwidth=2
+	autocmd BufNewFile,BufRead *.css setlocal expandtab tabstop=2 shiftwidth=2
+	autocmd BufNewFile,BufRead *.scss setlocal expandtab tabstop=2 shiftwidth=2
+	autocmd BufNewFile,BufRead *.js setlocal expandtab tabstop=2 shiftwidth=2
+augroup END
+
 "音/フラッシュオフ
 set visualbell t_vb=
 
@@ -145,12 +155,12 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-endfunction
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function()
+"  return neocomplcache#smart_close_popup() . "\<CR>"
+"  " For no inserting <CR> key.
+"  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+"endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
