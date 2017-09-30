@@ -1,0 +1,15 @@
+case "$(uname)" in
+
+    Darwin) # OSがMacならば
+        if [[ -d /Applications/MacVim.app ]]; then # MacVimが存在するならば
+            PATH="/Applications/MacVim.app/Contents/bin:$PATH"
+        fi
+        ;;
+
+    *) ;; # OSがMac以外ならば何もしない
+esac
+
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
