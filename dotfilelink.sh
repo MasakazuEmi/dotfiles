@@ -15,5 +15,8 @@ ln -s ~/dotfiles/_vim ~/.vim
 rm -f ~/.gitconfig
 ln -s ~/dotfiles/_gitconfig .gitconfig
 
+rm -f ~/.conkyrc
+ln -s ~/dotfiles/_conkyrc .conkyrc
+
 mkdir -p tmp 2>/dev/null
 
