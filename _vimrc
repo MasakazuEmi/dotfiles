@@ -23,7 +23,7 @@ set backupdir=~/tmp
 set directory=~/tmp
 
 "leader
-map ¥ <Leader>
+"map \ <Leader>
 
 "NeoBundle用設定
 filetype off
@@ -97,6 +97,7 @@ NeoBundleCheck
 "***
 "***quickun
 "***
+nnoremap <leader>r :QuickRun<CR>
 let g:quickrun_config = {}
 if has('mac')
 	let g:quickrun_config['objc'] = {
